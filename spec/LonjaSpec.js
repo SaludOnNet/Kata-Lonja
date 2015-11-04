@@ -7,7 +7,7 @@ describe("Load", function() {
 			centollo: 0
 		};
 		var createLoadWrapper = function () {
-				createLoad(products);
+				return createLoad(products);
 		};
 
 		expect(createLoadWrapper).toThrowError("Load exceeded");
@@ -20,6 +20,10 @@ describe("Load", function() {
 			centollo: 0
 		};
 
-		var carga = createLoad(products);		
+		var createLoadWrapper = function () {
+				return createLoad(products);
+		};
+
+		expect(createLoadWrapper).not.toThrowError("Load exceeded");
 	});
 });
