@@ -6,15 +6,11 @@ describe("Load", function() {
 			pulpo: 200,
 			centollo: 0
 		};
-		var exceptionThrown = false;
+		var createLoadWrapper = function () {
+				createLoad(products);
+		};
 
-		try {
-			var carga = createLoad(products);
-		} catch (err) {
-			exceptionThrown = true;
-		}
-
-		expect(exceptionThrown).toBe(true);
+		expect(createLoadWrapper).toThrowError("Load exceeded");
   });
 
 	it("does not raise exception if load does not exceed 200 kg", function() {
@@ -24,6 +20,6 @@ describe("Load", function() {
 			centollo: 0
 		};
 
-		var carga = createLoad(products);
+		var carga = createLoad(products);		
 	});
 });
