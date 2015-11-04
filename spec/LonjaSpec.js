@@ -1,16 +1,16 @@
 describe("Load", function() {
-	
+
 	it("can not exceed 200 kg", function() {
 		var products = {
 			vieira: 50,
 			pulpo: 200,
 			centollo: 0
 		};
-		var createLoadWrapper = function () {
-				return createLoad(products);
+		var validateLoadWrapper = function () {
+				validateLoad(products);
 		};
 
-		expect(createLoadWrapper).toThrowError("Load exceeded");
+		expect(validateLoadWrapper).toThrowError("Load exceeded");
   });
 
 	it("does not raise exception if load does not exceed 200 kg", function() {
@@ -20,11 +20,11 @@ describe("Load", function() {
 			centollo: 0
 		};
 
-		var createLoadWrapper = function () {
-				return createLoad(products);
+		var validateLoadWrapper = function () {
+				validateLoad(products);
 		};
 
-		expect(createLoadWrapper).not.toThrowError("Load exceeded");
+		expect(validateLoadWrapper).not.toThrowError("Load exceeded");
 	});
 
 	it("can not create load with negative product weight", function(){
@@ -34,10 +34,10 @@ describe("Load", function() {
 			centollo: 0
 		};
 
-		var createLoadWrapper = function () {
-				return createLoad(products);
+		var validateLoadWrapper = function () {
+				return validateLoad(products);
 		};
 
-		expect(createLoadWrapper).toThrowError("Negative product weight");
+		expect(validateLoadWrapper).toThrowError("Negative product weight");
 	});
 });

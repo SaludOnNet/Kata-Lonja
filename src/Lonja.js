@@ -1,4 +1,4 @@
-function createLoad(productWeights) {
+function validateLoad(productWeights) {
   checkMaxWeight();
   checkNegativeWeight();
 
