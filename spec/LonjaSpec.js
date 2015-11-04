@@ -26,4 +26,18 @@ describe("Load", function() {
 
 		expect(createLoadWrapper).not.toThrowError("Load exceeded");
 	});
+
+	it("can not create load with negative product weight", function(){
+		var products = {
+			vieira: 50,
+			pulpo: -100,
+			centollo: 0
+		};
+
+		var createLoadWrapper = function () {
+				return createLoad(products);
+		};
+
+		expect(createLoadWrapper).toThrowError("Negative product weight");
+	});
 });
