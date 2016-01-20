@@ -44,19 +44,19 @@ describe("Load", function() {
 
 describe("IdealPriceCalculator", function(){
 
-	it("calculates the ideal price with vieiras", function(){
+	it("calculates the ideal price with vieiras in Madrid", function(){
 		var price = calculateIdealPrice("vieira", 30, "Madrid");
 
 		expect(price).toBe(15000);
 	});
 
-	it("calculates the ideal price with centollos", function(){
+	it("calculates the ideal price with centollos in Madrid", function(){
 		var price = calculateIdealPrice("centollo", 30, "Madrid");
 
 		expect(price).toBe(13500);
 	});
 
-	it("calculates the ideal price with pulpo", function(){
+	it("calculates the ideal price with pulpo in Madrid", function(){
 		var price = calculateIdealPrice("pulpo", 30, "Madrid");
 
 		expect(price).toBe(0);
