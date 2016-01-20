@@ -51,8 +51,14 @@ describe("IdealPriceCalculator", function(){
 	});
 
 	it("calculates the ideal price with centollos", function(){
-		var price = calculateIdealPrice("centollos", 30, "Madrid");
+		var price = calculateIdealPrice("centollo", 30, "Madrid");
 
 		expect(price).toBe(13500);
+	});
+
+	it("calculates the ideal price with pulpo", function(){
+		var price = calculateIdealPrice("pulpo", 30, "Madrid");
+
+		expect(price).toBe(0);
 	});
 });

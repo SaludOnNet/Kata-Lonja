@@ -18,6 +18,7 @@ function validateLoad(productWeights) {
 function calculateIdealPrice(product, kilos, city) {
   if(product == "vieira")
     return 15000;
-  else
+  if(product == "centollo")
     return 13500;
+  return 0;
 }
