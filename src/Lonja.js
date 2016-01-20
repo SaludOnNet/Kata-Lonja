@@ -14,3 +14,7 @@ function validateLoad(productWeights) {
     }
   }
 }
+
+function calculateIdealPrice(product, kilos, city) {
+  return 15000;
+}

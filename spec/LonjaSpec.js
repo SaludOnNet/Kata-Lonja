@@ -41,3 +41,12 @@ describe("Load", function() {
 		expect(validateLoadWrapper).toThrowError("Negative product weight");
 	});
 });
+
+describe("IdealPriceCalculator", function(){
+
+	it("calculates the ideal price", function(){
+		var price = calculateIdealPrice("viera", 30, "Madrid");
+
+		expect(price).toBe(15000);
+	});
+});
