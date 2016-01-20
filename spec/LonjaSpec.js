@@ -67,4 +67,16 @@ describe("IdealPriceCalculator", function(){
 
 		expect(price).toBe(18000);
 	});
+
+	it("calculates the ideal price with centollos in Lisboa", function(){
+		var price = calculateIdealPrice("centollo", 30, "Lisboa");
+
+		expect(price).toBe(15000);
+	});
+
+	it("calculates the ideal price with pulpo in Lisboa", function(){
+		var price = calculateIdealPrice("pulpo", 30, "Lisboa");
+
+		expect(price).toBe(3000);
+	});
 });
