@@ -61,4 +61,10 @@ describe("IdealPriceCalculator", function(){
 
 		expect(price).toBe(0);
 	});
+
+	it("calculates the ideal price with vieiras in Lisboa", function(){
+		var price = calculateIdealPrice("vieira", 30, "Lisboa");
+
+		expect(price).toBe(18000);
+	});
 });
