@@ -44,9 +44,15 @@ describe("Load", function() {
 
 describe("IdealPriceCalculator", function(){
 
-	it("calculates the ideal price", function(){
-		var price = calculateIdealPrice("viera", 30, "Madrid");
+	it("calculates the ideal price with vieiras", function(){
+		var price = calculateIdealPrice("vieira", 30, "Madrid");
 
 		expect(price).toBe(15000);
+	});
+
+	it("calculates the ideal price with centollos", function(){
+		var price = calculateIdealPrice("centollos", 30, "Madrid");
+
+		expect(price).toBe(13500);
 	});
 });
