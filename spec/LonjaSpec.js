@@ -82,7 +82,7 @@ describe("IdealPriceCalculator", function(){
 
 	it("throws exception if calculates the ideal price with unknown product in Lisboa", function(){
 		var calculateIdealPriceWrapper = function(){
-			var price = calculateIdealPrice("calamar", 30, "Lisboa");
+			var price = calculateIdealPrice("gamusino", 30, "Lisboa");
 		};
 
 		expect(calculateIdealPriceWrapper).toThrowError("Unkown product price");
@@ -116,5 +116,13 @@ describe("transportCostCalculator", function(){
 		var costResult = calculateTransportCost('Lisboa');
 
 		expect(costResult).toBe(1205);
+	});
+
+	it("throws exception if calculates cost to unknown city", function(){
+		var calculateTransportCostWrapper = function(){
+			var price = calculateTransportCost("Chiquitistan");
+		};
+
+		expect(calculateTransportCostWrapper).toThrowError("Unkown city");
 	});
 });

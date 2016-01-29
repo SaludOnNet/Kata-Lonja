@@ -41,5 +41,10 @@ function calculateTransportCost(city){
     'Barcelona' : 1100,
     'Lisboa' : 600
   };
+
+  var distance = distanceTo[city];
+  if(distance == undefined){
+    throw Error('Unkown city');
+  }
   return vanLoadCost + distanceTo[city] * costPerKilometer;
 }
