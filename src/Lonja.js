@@ -26,12 +26,12 @@ function calculateIdealPrice(product, kilos, city) {
 }
 
 function calculateTransportCost(city){
-  if(city == 'Madrid'){
-    return 5 + 800 * 2;
-  }
-  if(city == 'Barcelona')
-  {
-    return 5 + 1100 * 2;
-  }
-  return 5 + 600 * 2;
+  var vanLoadCost = 5;
+  var costPerKilometer = 2;
+  var distanceTo = {
+    'Madrid' : 800,
+    'Barcelona' : 1100,
+    'Lisboa' : 600
+  };
+  return vanLoadCost + distanceTo[city] * costPerKilometer;
 }
