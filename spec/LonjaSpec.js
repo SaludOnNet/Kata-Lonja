@@ -79,4 +79,14 @@ describe("IdealPriceCalculator", function(){
 
 		expect(price).toBe(3000);
 	});
+
+});
+
+describe("transportCostCalculator", function(){
+
+	it("calculates cost to Madrid", function(){
+		var costResult = calculateTransportCost('Madrid');
+
+		expect(costResult).toBe(1605);
+	});
 });

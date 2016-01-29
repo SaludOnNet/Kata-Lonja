@@ -24,3 +24,7 @@ function calculateIdealPrice(product, kilos, city) {
 
   return productPricePerCity[product][city] * kilos;
 }
+
+function calculateTransportCost(city){
+  return 5 + 800 * 2;
+}
