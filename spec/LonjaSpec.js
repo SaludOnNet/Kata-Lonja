@@ -95,4 +95,10 @@ describe("transportCostCalculator", function(){
 
 		expect(costResult).toBe(2205);
 	});
+
+	it("calculates cost to Lisboa", function(){
+		var costResult = calculateTransportCost('Lisboa');
+
+		expect(costResult).toBe(1205);
+	});
 });

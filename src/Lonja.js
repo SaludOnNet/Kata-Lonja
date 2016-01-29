@@ -29,5 +29,9 @@ function calculateTransportCost(city){
   if(city == 'Madrid'){
     return 5 + 800 * 2;
   }
-  return 5 + 1100 * 2;
+  if(city == 'Barcelona')
+  {
+    return 5 + 1100 * 2;
+  }
+  return 5 + 600 * 2;
 }
