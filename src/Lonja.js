@@ -22,11 +22,11 @@ function calculateIdealPrice(product, kilos, city) {
     pulpo: { Madrid: 0, Barcelona: 120, Lisboa: 100 }
   };
 
-  var productPricesBy = productPricePerCity[product];
-  if(productPricesBy == undefined){
+  var productPrices = productPricePerCity[product];
+  if(productPrices == undefined){
     throw Error('Unkown product price');
   }
-  var productPriceByCity  = productPricesBy[city];
+  var productPriceByCity  = productPrices[city];
   if(productPriceByCity == undefined){
     throw Error('Unkown city');
   }
