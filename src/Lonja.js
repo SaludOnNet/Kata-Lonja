@@ -26,5 +26,8 @@ function calculateIdealPrice(product, kilos, city) {
 }
 
 function calculateTransportCost(city){
-  return 5 + 800 * 2;
+  if(city == 'Madrid'){
+    return 5 + 800 * 2;
+  }
+  return 5 + 1100 * 2;
 }

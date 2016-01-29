@@ -89,4 +89,10 @@ describe("transportCostCalculator", function(){
 
 		expect(costResult).toBe(1605);
 	});
+
+	it("calculates cost to Barcelona", function(){
+		var costResult = calculateTransportCost('Barcelona');
+
+		expect(costResult).toBe(2205);
+	});
 });
