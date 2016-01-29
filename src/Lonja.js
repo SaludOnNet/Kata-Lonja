@@ -23,10 +23,14 @@ function calculateIdealPrice(product, kilos, city) {
   };
 
   var productPricesBy = productPricePerCity[product];
-  if(productPricesBy != undefined){
-    return productPricesBy[city] * kilos;
+  if(productPricesBy == undefined){
+    throw Error('Unkown product price');
   }
-  throw Error('Unkown product price');
+  var productPriceByCity  = productPricesBy[city];
+  if(productPriceByCity == undefined){
+    throw Error('Unkown city');
+  }
+  return productPriceByCity * kilos;
 }
 
 function calculateTransportCost(city){

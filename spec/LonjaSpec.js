@@ -88,6 +88,14 @@ describe("IdealPriceCalculator", function(){
 		expect(calculateIdealPriceWrapper).toThrowError("Unkown product price");
 	});
 
+	it("throws exception if calculates the ideal price with vieira in unknown city", function(){
+		var calculateIdealPriceWrapper = function(){
+			var price = calculateIdealPrice("vieira", 30, "Badajoz");
+		};
+
+		expect(calculateIdealPriceWrapper).toThrowError("Unkown city");
+	});
+
 });
 
 describe("transportCostCalculator", function(){
