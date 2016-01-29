@@ -22,7 +22,11 @@ function calculateIdealPrice(product, kilos, city) {
     pulpo: { Madrid: 0, Barcelona: 120, Lisboa: 100 }
   };
 
-  return productPricePerCity[product][city] * kilos;
+  var productPricesBy = productPricePerCity[product];
+  if(productPricesBy != undefined){
+    return productPricesBy[city] * kilos;
+  }
+  throw Error('Unkown product price');
 }
 
 function calculateTransportCost(city){

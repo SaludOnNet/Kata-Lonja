@@ -37,9 +37,9 @@ describe("Load", function() {
 		var validateLoadWrapper = function () {
 				return validateLoad(products);
 		};
-
 		expect(validateLoadWrapper).toThrowError("Negative product weight");
 	});
+
 });
 
 describe("IdealPriceCalculator", function(){
@@ -78,6 +78,14 @@ describe("IdealPriceCalculator", function(){
 		var price = calculateIdealPrice("pulpo", 30, "Lisboa");
 
 		expect(price).toBe(3000);
+	});
+
+	it("throws exception if calculates the ideal price with unknown product in Lisboa", function(){
+		var calculateIdealPriceWrapper = function(){
+			var price = calculateIdealPrice("calamar", 30, "Lisboa");
+		};
+
+		expect(calculateIdealPriceWrapper).toThrowError("Unkown product price");
 	});
 
 });
