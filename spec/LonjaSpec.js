@@ -139,4 +139,10 @@ describe("PriceDevaluationCalculator", function(){
 
 		expect(rate).toBe(0.083);
 	});
+
+	it("calculates devaluation rate when distance is over the limit", function(){
+		var rate = calculateDevaluationRate(10001);
+
+			expect(rate).toBe(1);
+	});
 });
