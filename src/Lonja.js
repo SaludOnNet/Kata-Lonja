@@ -48,3 +48,7 @@ function calculateTransportCost(city){
   }
   return vanLoadCost + distanceTo[city] * costPerKilometer;
 }
+
+function calculateDevaluationRate(distanceInKilometers){
+  return 0.01;
+}

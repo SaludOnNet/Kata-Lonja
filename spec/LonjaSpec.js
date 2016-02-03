@@ -126,3 +126,12 @@ describe("transportCostCalculator", function(){
 		expect(calculateTransportCostWrapper).toThrowError("Unkown city");
 	});
 });
+
+describe("PriceDevaluationCalculator", function(){
+	it("calculates devaluation rate", function(){
+		var rate = calculateDevaluationRate(100);
+
+		expect(rate).toBe(0.01);
+	});
+
+});
