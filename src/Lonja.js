@@ -49,9 +49,11 @@ function calculateTransportCost(city){
   return vanLoadCost + distanceTo[city] * costPerKilometer;
 }
 
-function calculateDevaluationRate(distanceInKilometers){
-  if(distanceInKilometers >= 10000){
-    return 1;
-  }
-  return distanceInKilometers / 10000;
+function calculateDevaluationRate(devaluationPercentagePerHundredKm, distanceInKilometers){
+  var hundredKm = distanceInKilometers / 100;
+  var rate = hundredKm * devaluationPercentagePerHundredKm;
+  if(rate > 100)
+    return 100;
+
+  return rate;
 }

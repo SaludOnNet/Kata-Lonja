@@ -129,20 +129,20 @@ describe("transportCostCalculator", function(){
 
 describe("PriceDevaluationCalculator", function(){
 	it("calculates devaluation rate", function(){
-		var rate = calculateDevaluationRate(100);
+		var rate = calculateDevaluationRate(1, 100);
 
-		expect(rate).toBe(0.01);
+		expect(rate).toBe(1);
 	});
 
 	it("calculates another devaluation rate", function(){
-		var rate = calculateDevaluationRate(830);
+		var rate = calculateDevaluationRate(1, 830);
 
-		expect(rate).toBe(0.083);
+		expect(rate).toBe(8.3);
 	});
 
 	it("calculates devaluation rate when distance is over the limit", function(){
-		var rate = calculateDevaluationRate(10001);
+		var rate = calculateDevaluationRate(1, 10001);
 
-			expect(rate).toBe(1);
+			expect(rate).toBe(100);
 	});
 });
