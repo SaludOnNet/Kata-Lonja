@@ -134,4 +134,9 @@ describe("PriceDevaluationCalculator", function(){
 		expect(rate).toBe(0.01);
 	});
 
+	it("calculates another devaluation rate", function(){
+		var rate = calculateDevaluationRate(830);
+
+		expect(rate).toBe(0.083);
+	});
 });

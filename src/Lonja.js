@@ -50,5 +50,5 @@ function calculateTransportCost(city){
 }
 
 function calculateDevaluationRate(distanceInKilometers){
-  return 0.01;
+  return distanceInKilometers / 10000;
 }
