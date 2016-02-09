@@ -146,3 +146,11 @@ describe("PriceDevaluationCalculator", function(){
 			expect(rate).toBe(100);
 	});
 });
+
+describe("ProductRevenueCalculator",function(){
+	it("calculates revenue of 300 kg of vieiras in Madrid", function(){
+		var price = calculateProductPrice("vieira", 300, "Madrid");
+
+		expect(price).toBe(136395);
+	})
+})

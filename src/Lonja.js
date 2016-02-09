@@ -33,17 +33,17 @@ function calculateIdealPrice(product, kilos, city) {
   return productPriceByCity * kilos;
 }
 
+var distanceTo = {
+  'Madrid' : 800,
+  'Barcelona' : 1100,
+  'Lisboa' : 600
+};
+
 function calculateTransportCost(city){
   var vanLoadCost = 5;
   var costPerKilometer = 2;
-  var distanceTo = {
-    'Madrid' : 800,
-    'Barcelona' : 1100,
-    'Lisboa' : 600
-  };
 
-  var distance = distanceTo[city];
-  if(distance == undefined){
+  if(distanceTo[city] == undefined){
     throw Error('Unkown city');
   }
   return vanLoadCost + distanceTo[city] * costPerKilometer;
@@ -56,4 +56,11 @@ function calculateDevaluationRate(devaluationPercentagePerHundredKm, distanceInK
     return 100;
 
   return rate;
+}
+
+function calculateProductPrice(product, kilos, city){
+  var devaluationRate = calculateDevaluationRate(1, distanceTo[city]);
+  var idealPrice = calculateIdealPrice(product, kilos, city);
+  var devaluatedPrice = idealPrice * (100 - devaluationRate) / 100;
+  return devaluatedPrice - calculateTransportCost(city);
 }
