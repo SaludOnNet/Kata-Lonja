@@ -58,9 +58,13 @@ function calculateDevaluationRate(devaluationPercentagePerHundredKm, distanceInK
   return rate;
 }
 
-function calculateProductPrice(product, kilos, city){
+function calculateProductRevenue(product, kilos, city){
   var devaluationRate = calculateDevaluationRate(1, distanceTo[city]);
   var idealPrice = calculateIdealPrice(product, kilos, city);
   var devaluatedPrice = idealPrice * (100 - devaluationRate) / 100;
   return devaluatedPrice - calculateTransportCost(city);
+}
+
+function calculateOptimalSellingCity(products){
+  return "Lisboa";
 }

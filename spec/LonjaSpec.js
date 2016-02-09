@@ -149,8 +149,33 @@ describe("PriceDevaluationCalculator", function(){
 
 describe("ProductRevenueCalculator",function(){
 	it("calculates revenue of 300 kg of vieiras in Madrid", function(){
-		var price = calculateProductPrice("vieira", 300, "Madrid");
+		var price = calculateProductRevenue("vieira", 300, "Madrid");
 
 		expect(price).toBe(136395);
+	})
+})
+
+describe("calculateOptimalSellingCity",function(){
+	it("decides travel to Lisboa", function(){
+		var products = {
+			vieira: 200,
+			pulpo: 50,
+			centollo: 200
+		};
+		var city = calculateOptimalSellingCity(products);
+
+		expect(city).toBe("Lisboa");
+	});
+
+
+	it("decides travel to Barcelona", function(){
+		var products = {
+			vieira: 0,
+			pulpo: 5000,
+			centollo: 0
+		};
+		var city = calculateOptimalSellingCity(products);
+
+		expect(city).toBe("Barcelona");
 	})
 })
