@@ -71,7 +71,16 @@ function calculateRevenuePerCity(products, city){
           calculateProductRevenue('centollo', products.centollo, city);
 }
 
-
 function calculateOptimalSellingCity(products){
-  return "Lisboa";
+  var cityResult = 'Madrid';
+  var optimalSelling = calculateRevenuePerCity(products, 'Madrid');
+  if(optimalSelling < calculateRevenuePerCity(products, 'Barcelona')){
+    cityResult = 'Barcelona';
+    optimalSelling = calculateRevenuePerCity(products, 'Barcelona');
+  }
+  if(optimalSelling < calculateRevenuePerCity(products, 'Lisboa')){
+    cityResult = 'Lisboa';
+    optimalSelling = calculateRevenuePerCity(products, 'Lisboa');
+  }
+  return cityResult;
 }

@@ -180,7 +180,7 @@ describe("Revenue for products in a city", function(){
 });
 
 
-xdescribe("calculateOptimalSellingCity",function(){
+describe("calculateOptimalSellingCity",function(){
 	it("decides travel to Lisboa", function(){
 		var products = {
 			vieira: 200,
@@ -191,9 +191,6 @@ xdescribe("calculateOptimalSellingCity",function(){
 
 		expect(city).toBe("Lisboa");
 	});
-
-
-
 
 	it("decides travel to Barcelona", function(){
 		var products = {
