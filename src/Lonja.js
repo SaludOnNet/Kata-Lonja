@@ -66,7 +66,7 @@ function calculateProductRevenue(product, kilos, city){
 }
 
 function calculateRevenuePerCity(products, city){
-  return calculateProductRevenue('vieira',products.vieira, city) +
+  return calculateProductRevenue('vieira', products.vieira, city) +
           calculateProductRevenue('pulpo', products.pulpo, city) +
           calculateProductRevenue('centollo', products.centollo, city);
 }

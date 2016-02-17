@@ -179,7 +179,6 @@ describe("Revenue for products in a city", function(){
 	});
 });
 
-
 describe("calculateOptimalSellingCity",function(){
 	it("decides travel to Lisboa", function(){
 		var products = {
