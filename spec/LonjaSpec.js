@@ -156,7 +156,7 @@ describe("ProductRevenueCalculator",function(){
 })
 
 describe("Revenue for products in a city", function(){
-	it("calculates the revenue in a city", function(){
+	it("calculates the revenue in Madrid", function(){
 		var products = {
 			vieira: 200,
 			pulpo: 50,
@@ -165,6 +165,17 @@ describe("Revenue for products in a city", function(){
 		var revenue = calculateRevenuePerCity(products, 'Madrid');
 
 		expect(revenue).toBe(169985);
+	});
+
+	it("calculates the revenue in Barcelona", function(){
+		var products = {
+			vieira: 200,
+			pulpo: 50,
+			centollo: 200
+		};
+		var revenue = calculateRevenuePerCity(products, 'Barcelona');
+
+		expect(revenue).toBe(78825);
 	});
 });
 

@@ -65,8 +65,10 @@ function calculateProductRevenue(product, kilos, city){
   return devaluatedPrice - calculateTransportCost(city);
 }
 
-function calculateRevenuePerCity(){
-  return 169985;
+function calculateRevenuePerCity(products, city){
+  return calculateProductRevenue('vieira',products.vieira, city) +
+          calculateProductRevenue('pulpo', products.pulpo, city) +
+          calculateProductRevenue('centollo', products.centollo, city);
 }
 
 
