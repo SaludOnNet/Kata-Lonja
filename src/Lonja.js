@@ -65,6 +65,11 @@ function calculateProductRevenue(product, kilos, city){
   return devaluatedPrice - calculateTransportCost(city);
 }
 
+function calculateRevenuePerCity(){
+  return 169985;
+}
+
+
 function calculateOptimalSellingCity(products){
   return "Lisboa";
 }

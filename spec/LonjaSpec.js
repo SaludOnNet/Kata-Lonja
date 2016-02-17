@@ -155,7 +155,21 @@ describe("ProductRevenueCalculator",function(){
 	})
 })
 
-describe("calculateOptimalSellingCity",function(){
+describe("Revenue for products in a city", function(){
+	it("calculates the revenue in a city", function(){
+		var products = {
+			vieira: 200,
+			pulpo: 50,
+			centollo: 200
+		};
+		var revenue = calculateRevenuePerCity(products, 'Madrid');
+
+		expect(revenue).toBe(169985);
+	});
+});
+
+
+xdescribe("calculateOptimalSellingCity",function(){
 	it("decides travel to Lisboa", function(){
 		var products = {
 			vieira: 200,
@@ -166,6 +180,8 @@ describe("calculateOptimalSellingCity",function(){
 
 		expect(city).toBe("Lisboa");
 	});
+
+
 
 
 	it("decides travel to Barcelona", function(){
