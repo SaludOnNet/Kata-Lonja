@@ -71,16 +71,18 @@ function calculateRevenuePerCity(products, city){
           calculateProductRevenue('centollo', products.centollo, city);
 }
 
-function calculateOptimalSellingCity(products){
-  var cityResult = 'Madrid';
-  var optimalSelling = calculateRevenuePerCity(products, 'Madrid');
-  if(optimalSelling < calculateRevenuePerCity(products, 'Barcelona')){
-    cityResult = 'Barcelona';
-    optimalSelling = calculateRevenuePerCity(products, 'Barcelona');
-  }
-  if(optimalSelling < calculateRevenuePerCity(products, 'Lisboa')){
-    cityResult = 'Lisboa';
-    optimalSelling = calculateRevenuePerCity(products, 'Lisboa');
-  }
-  return cityResult;
+function calculateOptimalSellingCity(products, cities){
+
+  var revenuesByCity = cities.map(function(city){
+                          return {
+                            revenue:  calculateRevenuePerCity(products, city),
+                            cityName: city
+                          };
+                        });
+
+  return revenuesByCity.reduce(function(accum, revenueInCity){
+    if(revenueInCity.revenue > accum.revenue)
+      return revenueInCity;
+    return accum;
+  }).cityName;
 }

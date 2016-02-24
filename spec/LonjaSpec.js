@@ -180,13 +180,17 @@ describe("Revenue for products in a city", function(){
 });
 
 describe("calculateOptimalSellingCity",function(){
+	var cities;
+	beforeEach(function(){
+		cities = ['Madrid','Lisboa','Barcelona'];
+	});
 	it("decides travel to Lisboa", function(){
 		var products = {
 			vieira: 200,
 			pulpo: 50,
 			centollo: 200
 		};
-		var city = calculateOptimalSellingCity(products);
+		var city = calculateOptimalSellingCity(products, cities);
 
 		expect(city).toBe("Lisboa");
 	});
@@ -197,7 +201,7 @@ describe("calculateOptimalSellingCity",function(){
 			pulpo: 5000,
 			centollo: 0
 		};
-		var city = calculateOptimalSellingCity(products);
+		var city = calculateOptimalSellingCity(products, cities);
 
 		expect(city).toBe("Barcelona");
 	})
